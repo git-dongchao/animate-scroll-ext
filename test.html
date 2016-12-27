@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>首页</title>
+
+    <script src="js/jquery/jquery.min.js"></script>
+</head>
+
+<body style="width: 100%; padding: 0;margin: 0;">
+
+    <!--data-animate-scroll='{"x": "2000", "duration": "1"}'-->
+    <div id="container" style="height: 500px; height: 100px;">
+        <div class="test1" data-animate-scroll='{"x": "200", "duration": "1"}'>
+            当前文字滚动
+        </div>
+        <div class="test1" data-animate-scroll='{"x": "200", "duration": "1", "interval": "600"}'>
+            后一个文字滚动
+        </div>
+    </div>
+	
+    <div style="height: 800px;"></div>
+	<div class="text-scroll" data-animate-scroll='{"x": "200", "duration": "1"}'>
+        元素显示时，文字滚动效果
+    </div>
+	<div style="height: 800px;"></div>
+
+    <!--滚动动画-->
+    <script src="js/animate-scroll-master/vendor/TweenMax.min.js"></script>
+    <script src="js/animate-scroll-master/vendor/ScrollToPlugin.min.js"></script>
+    <script src="js/animate-scroll-master/animate-scroll-ext.js"></script>
+    <script src="js/animate-scroll-master/vendor/foundation.min.js"></script>
+    <script src="js/animate-scroll-master/app.min.js"></script>
+	
+	<script>
+		$(document).ready(function() {
+			setTimeout(function() {
+				$("#container").sortAnimateScroll($(".test1"));
+				$(".text-scroll").animateScrollExt();
+				$(document).animateScroll();
+			}, 0);
+		});
+	</script>
+
+</body>
+
+</html>
